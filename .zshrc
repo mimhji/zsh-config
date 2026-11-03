@@ -17,8 +17,11 @@ plugins=(
   zsh-autosuggestions
   fast-syntax-highlighting
   zsh-autocomplete
-  yarn-autocompletions
 )
+
+if [[ -f "${ZSH_CUSTOM:-$ZSH/custom}/plugins/yarn-autocompletions/yarn-autocompletions.plugin.zsh" ]]; then
+  plugins+=(yarn-autocompletions)
+fi
 
 source "$ZSH/oh-my-zsh.sh"
 

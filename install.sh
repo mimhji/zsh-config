@@ -48,6 +48,7 @@ install_yarn_autocompletions() {
   if command -v cargo >/dev/null 2>&1; then
     cargo_bin="$(command -v cargo)"
   elif [[ -x "$HOME/.cargo/bin/cargo" ]]; then
+    export PATH="$HOME/.cargo/bin:$PATH"
     cargo_bin="$HOME/.cargo/bin/cargo"
   fi
 
