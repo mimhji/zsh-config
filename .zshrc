@@ -26,6 +26,10 @@ if [[ -f "${ZSH_CUSTOM:-$ZSH/custom}/plugins/yarn-autocompletions/yarn-autocompl
   plugins+=(yarn-autocompletions)
 fi
 
+# Oh My Zsh runs compinit before it sources plugins, so zsh-autocomplete's helper
+# functions must be on fpath first or they are missing from the completion dump.
+fpath=("${ZSH_CUSTOM:-$ZSH/custom}/plugins/zsh-autocomplete/Completions" $fpath)
+
 source "$ZSH/oh-my-zsh.sh"
 
 # Keep Tab for completion (yarn scripts, etc). Accept autosuggestions with Ctrl-Y.
