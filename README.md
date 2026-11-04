@@ -116,6 +116,7 @@ To add machine-specific or project-specific settings without committing them to 
 ## Included keybindings and helpers
 
 - `Ctrl-Y` accepts the current inline autosuggestion (`autosuggest-accept`), keeping `Tab` for standard menu completion.
+- `Ctrl-U` (and `Cmd+Delete` in terminals that send `^U` or CSI-u, such as VS Code/Cursor, iTerm2 with Natural Text Editing, Ghostty, or Warp) clears the entire command line (`kill-whole-line`), including when the `zsh-autocomplete` menu is active.
 - `dev <folder>` jumps to `~/Documents/dev/<folder>`.
 - `zs` reloads the shell (`exec zsh -l`).
 - `c` clears the terminal, `dl` jumps to `~/Downloads`, `dt` jumps to `~/Desktop`, and `vs` opens VS Code in the current directory (`code .`).

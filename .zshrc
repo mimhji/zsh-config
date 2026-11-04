@@ -35,6 +35,12 @@ source "$ZSH/oh-my-zsh.sh"
 # Keep Tab for completion (yarn scripts, etc). Accept autosuggestions with Ctrl-Y.
 bindkey '^Y' autosuggest-accept
 
+# Clear the entire line on Ctrl-U or Cmd+Delete (for terminals that send ^U or CSI-u)
+bindkey '^U' kill-whole-line
+bindkey '\e[127;9u' kill-whole-line
+bindkey -M menuselect '^U' kill-whole-line
+bindkey -M menuselect '\e[127;9u' kill-whole-line
+
 # zsh-autocomplete + Oh My Zsh drops yarn-autocompletions' compdef (OMZ runs
 # compinit first; autocomplete then discards deferred compdefs). Re-bind after init.
 _fix_yarn_completion() {
