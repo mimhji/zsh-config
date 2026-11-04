@@ -10,6 +10,9 @@ DISABLE_LS_COLORS="true"
 # User local binaries
 export PATH="$HOME/.local/bin:$PATH"
 
+# Automatically switch Node versions when entering a directory with .nvmrc
+export NVM_AUTO_USE=true
+
 # Plugins
 plugins=(
   git

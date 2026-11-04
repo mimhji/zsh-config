@@ -16,7 +16,7 @@ fi
 
 mkdir -p "$ZSH_CUSTOM_DIR/plugins"
 
-clone_or_update_plugin() {
+clone_plugin() {
   local name="$1"
   local url="$2"
   local target="$ZSH_CUSTOM_DIR/plugins/$name"
@@ -31,11 +31,10 @@ clone_or_update_plugin() {
   fi
 }
 
-clone_or_update_plugin "zsh-nvm" "https://github.com/lukechilds/zsh-nvm.git"
-clone_or_update_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions.git"
-clone_or_update_plugin "fast-syntax-highlighting" "https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
-clone_or_update_plugin "zsh-autocomplete" "https://github.com/marlonrichert/zsh-autocomplete.git"
-clone_or_update_plugin "zsh-syntax-highlighting" "https://github.com/zsh-users/zsh-syntax-highlighting.git"
+clone_plugin "zsh-nvm" "https://github.com/lukechilds/zsh-nvm.git"
+clone_plugin "zsh-autosuggestions" "https://github.com/zsh-users/zsh-autosuggestions.git"
+clone_plugin "fast-syntax-highlighting" "https://github.com/zdharma-continuum/fast-syntax-highlighting.git"
+clone_plugin "zsh-autocomplete" "https://github.com/marlonrichert/zsh-autocomplete.git"
 
 install_yarn_autocompletions() {
   local target="$ZSH_CUSTOM_DIR/plugins/yarn-autocompletions"
